@@ -1,7 +1,7 @@
 {
   "pages": {
     "dashboard": "Dashboard",
-    "quickOps": "Quick-Ops",
+    "quick-ops": "Quick-Ops",
     "current": "Atual"
   }
 }

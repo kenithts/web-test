@@ -8,5 +8,10 @@
       @extend .flex-row;
       background-color: $background;
     }
+
+    &__content {
+      padding: 12px 27px;
+      width: 100%;
+    }
   }
 }

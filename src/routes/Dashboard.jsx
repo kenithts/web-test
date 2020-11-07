@@ -5,12 +5,13 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Authenticated from 'layouts/Authenticated';
+import Refund from 'pages/refund';
 
 const Dashboard = () => (
   <Authenticated>
     <Switch>
       <Route path="/dashboard/quick-ops/current">
-        page
+        <Refund />
       </Route>
       <Route>
         <Redirect to="/dashboard/quick-ops/current" />

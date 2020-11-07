@@ -1,0 +1,7 @@
+@import 'assets/main.scss';
+
+.refund {
+  &__wrapper {
+    @extend .flex-column;
+  }
+}
