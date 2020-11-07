@@ -1,0 +1,10 @@
+@import 'assets/main.scss';
+
+.sidebar {
+  &__wrapper {
+    @extend .flex-column;
+    background-color: $primary;
+    height: calc(100vh - #{$header-height});
+    width: $sidebar-width;
+  }
+}

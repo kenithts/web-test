@@ -10,7 +10,7 @@ const Dashboard = () => (
   <Authenticated>
     <Switch>
       <Route path="/dashboard/quick-ops/current">
-        asdasdas
+        page
       </Route>
       <Route>
         <Redirect to="/dashboard/quick-ops/current" />

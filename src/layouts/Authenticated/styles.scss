@@ -1,0 +1,12 @@
+@import 'assets/main.scss';
+
+.authenticated {
+  &__wrapper {
+    @extend .flex-column;
+
+    &__inner {
+      @extend .flex-row;
+      background-color: $background;
+    }
+  }
+}

@@ -2,11 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from 'components/header';
+import Sidebar from 'components/sidebar';
+
+import './styles.scss';
 
 const Authenticated = ({ children }) => (
-  <div className="authenticated__main-wrapper">
+  <div className="authenticated__wrapper">
     <Header />
-    {children}
+    <div className="authenticated__wrapper__inner">
+      <Sidebar />
+      <div className="authenticated__wrapper__content">
+        {children}
+      </div>
+    </div>
   </div>
 );
 

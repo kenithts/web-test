@@ -1,7 +1,9 @@
+@import 'assets/main.scss';
+
 .header {
   &__wrapper {
-    // @extend .flex-row;
-    // background-color: $primary;
-    // color: $primary-text;
+    @extend .flex-row;
+    background-color: $primary;
+    height: $header-height;
   }
 }
