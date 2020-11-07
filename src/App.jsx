@@ -3,16 +3,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
-import Authenticated from './Layouts/Authenticated';
+import Dashboard from 'routes/Dashboard';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Authenticated>
-          <Route path="/dashboard/quick-ops/current" />
-        </Authenticated>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route>
+          <Redirect to="/dashboard/quick-ops/current" />
+        </Route>
       </Switch>
     </Router>
   );
