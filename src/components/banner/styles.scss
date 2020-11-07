@@ -1,0 +1,11 @@
+@import 'assets/main.scss';
+
+.banner {
+  &__wrapper {
+    background-image: linear-gradient(to right, #00d7ce 3%, #00c5fc);
+    border-radius: 12px;
+    min-height: 10px;
+    padding: 25px 43px;
+    color: $light-text;
+  }
+}

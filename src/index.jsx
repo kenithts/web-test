@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './i18n';
+import 'react-notifications/lib/notifications.css';
 
 import reportWebVitals from './reportWebVitals';
 import App from './App';

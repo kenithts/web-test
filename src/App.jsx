@@ -6,10 +6,12 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Dashboard from 'routes/Dashboard';
+import { NotificationContainer } from 'react-notifications';
 
 function App() {
   return (
     <Router>
+      <NotificationContainer />
       <Switch>
         <Route path="/dashboard">
           <Dashboard />

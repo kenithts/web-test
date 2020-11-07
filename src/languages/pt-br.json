@@ -3,5 +3,8 @@
     "dashboard": "Dashboard",
     "quick-ops": "Quick-Ops",
     "current": "Atual"
+  },
+  "general": {
+    "defaultError": "Ocorreu um erro!"
   }
 }
