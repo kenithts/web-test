@@ -2,39 +2,33 @@
 
 .timeline-list {
   &__item {
-    @extend .flex-row;
+    @extend .flex-column;
     min-width: 100%;
     margin-top: 24px;
     background-color: $light-text;
     padding: 24px 48px;
     border-radius: 6px;
 
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+
+    &__column {
+      @include media-breakpoint-down(lg) {
+        width: 100% !important;
+        margin-bottom: 20px;
+      }
+      display: flex;
+    }
+
     &__receipt {
       @extend .hover;
       color: $highlight-text;
       font-size: $font-size-sm;
+      align-self: center;
 
       & > span {
         margin-left: 10px;
-      }
-    }
-
-    &__column {
-      &:nth-child(1) {
-        width: 10%;
-      }
-      &:nth-child(2) {
-        width: 20%;
-      }
-      &:nth-child(3) {
-        width: 20%;
-      }
-      &:nth-child(4) {
-        width: 20%;
-      }
-      &:nth-child(5) {
-        @extend .flex-center;
-        width: 20%;
       }
     }
 
