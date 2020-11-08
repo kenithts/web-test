@@ -25,7 +25,16 @@
   "sidebar": {
     "balance": "Saldo",
     "received": "Recebeu",
-    "declared": "Gastou"
+    "declared": "Gastou",
+    "extract": "Extrato",
+    "description": "Descrição",
+    "value": "Valor",
+    "declaredExpenses": "Despesas declaradas",
+    "approvedExpenses": "Despesas aprovadas",
+    "paymentDone": "Pagamento realizado",
+    "declaredExpensesDescription": "Despesas declaradas pelo trooper",
+    "approvedExpensesDescription": "Despesas aprovadas pelo financeiro",
+    "paymentDoneDescription": "Pagamento realizado pelo financeiro"
   },
   "timeline": {
     "action": "Ação",

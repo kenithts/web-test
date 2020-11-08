@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import Indicator from '../indicator';
+import BalanceTable from '../balanceTable';
 
 import './styles.scss';
 
@@ -20,6 +21,17 @@ const Balance = ({ item }) => {
         <Indicator type="declared" currency={currency} value={item.declared} />
         <Indicator type="received" currency={currency} value={item.received} />
       </div>
+      <div className="balance__list">
+        <b>
+          {t('extract')}
+        </b>
+      </div>
+      <BalanceTable
+        declared={item.declared}
+        approved={item.approved}
+        received={item.received}
+        currency={currency}
+      />
     </div>
   );
 };
@@ -30,7 +42,6 @@ Balance.propTypes = {
     declared: PropTypes.number,
     received: PropTypes.number,
     approved: PropTypes.number,
-    returned: PropTypes.number,
     currency: PropTypes.shape({
       symbol: PropTypes.string,
     }),
