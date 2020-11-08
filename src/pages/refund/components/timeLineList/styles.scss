@@ -2,6 +2,7 @@
 
 .timeline-list {
   &__item {
+    @extend .flex-row;
     margin-top: 24px;
     background-color: $light-text;
     padding: 24px 48px;

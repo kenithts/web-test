@@ -17,5 +17,8 @@
     "people": "{{amount}} pessoas",
     "project": "Projeto",
     "costCenter": "Centro de custo"
+  },
+  "timeline": {
+    "action": "Ação"
   }
 }

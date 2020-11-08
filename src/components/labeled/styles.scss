@@ -1,0 +1,17 @@
+@import 'assets/main.scss';
+
+.labeled {
+  &__wrapper {
+    @extend .flex-column;
+    width: fit-content;
+    font-size: $font-size-lg;
+    font-weight: 700;
+
+    & > span {
+      font-size: $font-size-xs;
+      color: $secondary-text;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}

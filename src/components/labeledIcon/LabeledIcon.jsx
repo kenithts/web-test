@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
+
+import Icon from 'components/icon';
 
 import './styles.scss';
 
 const LabeledIcon = ({ classNameIcon, icon, label }) => (
   <div className="labeled-icon__wrapper">
     <span className={classnames(classNameIcon, 'labeled-icon__icon')}>
-      <FontAwesomeIcon icon={icon} />
+      <Icon name={icon} />
     </span>
-    <span className="">
+    <span>
       {label}
     </span>
   </div>

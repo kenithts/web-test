@@ -1,32 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import LabeledIcon from 'components/labeledIcon';
-import { faMoneyCheckAlt, faUsers, faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import Labeled from 'components/labeled';
 import { unixToDate } from 'utils/date';
+import { useTranslation } from 'react-i18next';
 import { getTimeline } from '../../service';
 
 import './styles.scss';
 
 const ITEM_TYPES = {
   EXPENSE: {
-    icon: faMoneyCheckAlt,
+    icon: 'money-check-alt',
     classNameIcon: 'timeline-list__item--expense',
   },
   EVALUATION: {
-    icon: faUsers,
+    icon: 'users',
     classNameIcon: 'timeline-list__item--evaluation',
   },
   ACCOUNTABILITY_SUBMITTED: {
-    icon: faAsterisk,
+    icon: 'asterisk',
     classNameIcon: 'timeline-list__item--account',
   },
   ACCOUNTABILITY_CREATED: {
-    icon: faAsterisk,
+    icon: 'asterisk',
     classNameIcon: 'timeline-list__item--account',
   },
 };
 
 const TimelineList = () => {
   const [items, setItems] = useState(null);
+  const { t } = useTranslation('timeline');
 
   useEffect(() => {
     setItems(getTimeline());
@@ -45,9 +47,12 @@ const TimelineList = () => {
           <div className="timeline-list__item">
             <LabeledIcon
               classNameIcon={ITEM_TYPES[item.cardType].classNameIcon}
-              icon={ITEM_TYPES[item.cardType].icon}
+              icon={item.expenseTypeIcon || ITEM_TYPES[item.cardType].icon}
               label={unixToDate(item.cardDate)}
             />
+            <Labeled label={t('action')}>
+              {item.cardDate}
+            </Labeled>
           </div>
         ))
       }
