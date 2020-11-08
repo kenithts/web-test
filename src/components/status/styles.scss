@@ -1,0 +1,29 @@
+@import 'assets/main.scss';
+
+.status {
+  &__wrapper {
+    @extend .flex-center;
+    flex-direction: column;
+    background-color: $pending-bg;
+    padding: 10px 33px;
+    border-radius: 6px;
+    color: $pending-text;
+    border: 1px solid $pending-text;
+
+    & > strong {
+      font-size: $font-size-xl;
+    }
+
+    &.completed {
+      border-color: $success-text;
+      color: $success-text;
+      background-color: $success-bg;
+    }
+
+    &.closed {
+      border-color: $error-text;
+      color: $error-text;
+      background-color: $error-bg;
+    }
+  }
+}

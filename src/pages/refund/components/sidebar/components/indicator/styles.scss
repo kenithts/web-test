@@ -1,0 +1,23 @@
+@import 'assets/main.scss';
+
+.indicator {
+  &__wrapper {
+    @extend .flex-row;
+  }
+
+  &__inner {
+    @extend .flex-column;
+  }
+
+  &__arrow {
+    @extend .flex-center;
+
+    font-size: $font-size-xs;
+    color: $secondary-text;
+    width: 26px;
+    height: 26px;
+    border: 1px solid $secondary-text;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}

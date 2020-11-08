@@ -25,7 +25,7 @@
     @extend .flex-column;
 
     font-size: $font-size-sm;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       flex-direction: row;
     }
 
@@ -37,7 +37,7 @@
       padding-bottom: 20px;
       border-bottom: 1px solid $light-text;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         border-right: 1px solid $light-text;
         width: 33%;
         margin: 0;
@@ -70,7 +70,7 @@
       align-items: center;
       height: 100%;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         margin-top: 13px;
       }
 
@@ -101,7 +101,7 @@
       b {
         text-align: center;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           width: 70%;
         }
       }

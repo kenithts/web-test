@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Banner from 'components/banner';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,13 +12,14 @@ import GeneralDescription from './GeneralDescription';
 import CostCenter from './CostCenter';
 import Budget from './Budget';
 
-const RefundBanner = () => {
+const RefundBanner = ({ setStatus }) => {
   const [headerInfo, setHeaderInfo] = useState(null);
   const { t } = useTranslation('refund');
 
   useEffect(async () => {
     const res = await getHeader();
     setHeaderInfo(res);
+    setStatus(res.status);
   }, []);
 
   if (!headerInfo) {
@@ -43,6 +45,10 @@ const RefundBanner = () => {
       <FontAwesomeIcon className="refund-banner__edit" icon={faEdit} />
     </Banner>
   );
+};
+
+RefundBanner.propTypes = {
+  setStatus: PropTypes.func.isRequired,
 };
 
 export default RefundBanner;

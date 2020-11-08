@@ -1,0 +1,32 @@
+@import 'assets/main.scss';
+
+.balance {
+  &__wrapper {
+    @extend .flex-column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $secondary-text;
+    margin-top: 10px;
+    padding: 10px;
+
+    & > span {
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+    }
+
+    & > strong {
+      font-size: $font-size-xl;
+      color: $primary;
+      margin: 12px 0;
+    }
+  }
+
+  &__indicators {
+    @extend .flex-row;
+
+    div:first-child {
+      border-right: 1px solid $secondary-text;
+    }
+  }
+}

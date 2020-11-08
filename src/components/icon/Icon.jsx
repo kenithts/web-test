@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  faMoneyCheckAlt, faUsers, faAsterisk, faUtensils, faConciergeBell, faReceipt,
-} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMoneyCheckAlt,
+  faUsers,
+  faAsterisk,
+  faUtensils,
+  faConciergeBell,
+  faReceipt,
+  faArrowDown,
+  faArrowUp,
+} from '@fortawesome/free-solid-svg-icons';
 
 const ICONS = {
   'money-check-alt': faMoneyCheckAlt,
@@ -12,6 +19,9 @@ const ICONS = {
   utensils: faUtensils,
   'concierge-bell': faConciergeBell,
   receipt: faReceipt,
+  'arrow-up': faArrowUp,
+  'arrow-down': faArrowDown,
+
 };
 
 const Icon = ({ name }) => (

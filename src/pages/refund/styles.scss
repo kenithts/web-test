@@ -4,4 +4,12 @@
   &__wrapper {
     @extend .flex-column;
   }
+
+  &__inner {
+    @extend .flex-row;
+  }
+
+  &__content {
+    @extend .flex-column;
+  }
 }

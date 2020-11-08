@@ -14,8 +14,6 @@ const TimelineList = () => {
     setItems(getTimeline());
   }, []);
 
-  console.log(items);
-
   if (!items) {
     return null;
   }

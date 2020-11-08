@@ -16,7 +16,16 @@
     "quantity": "Quantidade",
     "people": "{{amount}} pessoas",
     "project": "Projeto",
-    "costCenter": "Centro de custo"
+    "costCenter": "Centro de custo",
+    "status": "Status",
+    "open": "Aguardando",
+    "completed": "Concluído",
+    "closed": "Negado"
+  },
+  "sidebar": {
+    "balance": "Saldo",
+    "received": "Recebeu",
+    "declared": "Gastou"
   },
   "timeline": {
     "action": "Ação",

@@ -1,0 +1,17 @@
+@import 'assets/main.scss';
+
+.right-sidebar {
+  &__wrapper {
+    @extend .flex-column;
+
+    background-color: $light-text;
+    width: 392px;
+    padding: 40px 22px;
+    min-height: calc(100vh - $header-height);
+    margin-left: 56px;
+  }
+
+  &__items {
+    @extend .flex-column;
+  }
+}
