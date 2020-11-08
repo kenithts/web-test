@@ -9,6 +9,16 @@
     padding: 24px 48px;
     border-radius: 6px;
 
+    &__receipt {
+      @extend .hover;
+      color: $highlight-text;
+      font-size: $font-size-sm;
+
+      & > span {
+        margin-left: 10px;
+      }
+    }
+
     &__column {
       &:nth-child(1) {
         width: 10%;
@@ -17,6 +27,13 @@
         width: 20%;
       }
       &:nth-child(3) {
+        width: 20%;
+      }
+      &:nth-child(4) {
+        width: 20%;
+      }
+      &:nth-child(5) {
+        @extend .flex-center;
         width: 20%;
       }
     }

@@ -1,0 +1,26 @@
+@import 'assets/main.scss';
+
+.tag {
+  &__wrapper {
+    @extend .flex-row;
+    border: 1px solid $pending-text;
+    background-color: $pending-bg;
+    color: $pending-text;
+    font-size: $font-size-xs;
+    padding: 6px 12px;
+    border-radius: 18px;
+    margin-top: 10px;
+
+    &.approved {
+      background-color: $success-bg;
+      color: $success-text;
+      border-color: $success-text;
+    }
+  
+    &.reproved {
+      background-color: $error-bg;
+      color: $error-text;
+      border-color: $error-text;
+    }
+  }
+}

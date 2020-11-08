@@ -21,8 +21,13 @@
   "timeline": {
     "action": "Ação",
     "value": "Valor",
+    "status": "Status",
+    "pending": "Pendente",
+    "approved": "Aprovado",
+    "reproved": "Reprovado",
     "hotel-fee": "Hotel",
     "food": "Refeição",
-    "noteValue": "Valor da nota"
+    "noteValue": "Valor da nota",
+    "seeReceipt": "Ver nota fiscal"
   }
 }
