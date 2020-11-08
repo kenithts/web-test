@@ -11,5 +11,15 @@
       color: $info-text;
       background-color: $info-bg;
     }
+
+    &--account {
+      color: $success-text;
+      background-color: $success-bg;
+    }
+
+    &--evaluation {
+      color: $pending-text;
+      background-color: $pending-bg;
+    }
   }
 }
