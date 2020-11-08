@@ -1,0 +1,19 @@
+@import 'assets/main.scss';
+
+.button {
+  &__wrapper {
+    @extend .flex-row;
+    @extend .hover;
+    width: fit-content;
+    padding: 5px 10px;
+    color: $primary-text;
+    border: 1px solid $primary-text;
+    background-color: $light-text;
+    border-radius: 6px;
+    outline: none;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+}

@@ -20,7 +20,8 @@
     "status": "Status",
     "open": "Aguardando",
     "completed": "Concluído",
-    "closed": "Negado"
+    "closed": "Negado",
+    "addExpense": "Adicionar despesa"
   },
   "sidebar": {
     "balance": "Saldo",
