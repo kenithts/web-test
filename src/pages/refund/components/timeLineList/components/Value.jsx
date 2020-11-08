@@ -2,11 +2,13 @@ import React from 'react';
 import Labeled from 'components/labeled';
 import PropTypes from 'prop-types';
 
+import Currency from 'components/currency';
+
 const Value = ({ item, t }) => (
   <Labeled className="timeline-list__item__column" label={t('value')}>
-    {`${item.currencyCode} ${item.amountSpent}`}
+    <Currency value={item.amountSpent} currency={item.currencyCode} />
     <span className="timeline-list__item__notes">
-      {`${t('noteValue')}: ${item.currencyCode} ${item.amountTotal}`}
+      <Currency value={item.amountTotal} currency={`${t('noteValue')}: ${item.currencyCode}`} />
     </span>
   </Labeled>
 );

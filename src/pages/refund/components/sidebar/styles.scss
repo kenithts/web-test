@@ -5,7 +5,8 @@
     @extend .flex-column;
 
     background-color: $light-text;
-    width: 392px;
+    min-width: 393px;
+    max-width: 393px;
     padding: 40px 22px;
     min-height: calc(100vh - $header-height);
     margin-left: 56px;

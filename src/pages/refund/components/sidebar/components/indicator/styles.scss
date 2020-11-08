@@ -3,10 +3,23 @@
 .indicator {
   &__wrapper {
     @extend .flex-row;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
   }
 
   &__inner {
     @extend .flex-column;
+    width: 100%;
+
+    & > span {
+      font-size: $font-size-xs;
+      color: $secondary-text;
+    }
+
+    & > p {
+      font-size: $font-size-sm;
+    }
   }
 
   &__arrow {
@@ -14,7 +27,8 @@
 
     font-size: $font-size-xs;
     color: $secondary-text;
-    width: 26px;
+    min-width: 26px;
+    max-width: 26px;
     height: 26px;
     border: 1px solid $secondary-text;
     border-radius: 50%;

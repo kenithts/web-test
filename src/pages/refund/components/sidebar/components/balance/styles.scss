@@ -24,9 +24,11 @@
 
   &__indicators {
     @extend .flex-row;
+    justify-content: center;
 
     div:first-child {
-      border-right: 1px solid $secondary-text;
+      margin-right: 10px;
+      padding-right: 10px;
     }
   }
 }

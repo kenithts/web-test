@@ -2,6 +2,8 @@ import React from 'react';
 import Icon from 'components/icon';
 import PropTypes from 'prop-types';
 
+import Currency from 'components/currency';
+
 import './styles.scss';
 import { useTranslation } from 'react-i18next';
 
@@ -18,9 +20,9 @@ const Indicator = ({ type, value, currency }) => {
         <span>
           {t(type)}
         </span>
-        <strong>
-          {`${currency} ${value}`}
-        </strong>
+        <p>
+          <Currency value={value} currency={currency} />
+        </p>
       </div>
     </div>
   );
