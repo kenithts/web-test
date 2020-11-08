@@ -5,10 +5,12 @@ import './styles.scss';
 
 const Labeled = ({ label, children }) => (
   <div className="labeled__wrapper">
-    <span>
+    <span className="labeled__wrapper__labeled">
       {label}
     </span>
-    {children}
+    <span className="labeled__children">
+      {children}
+    </span>
   </div>
 );
 

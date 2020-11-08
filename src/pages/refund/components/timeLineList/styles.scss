@@ -3,10 +3,29 @@
 .timeline-list {
   &__item {
     @extend .flex-row;
+    min-width: 100%;
     margin-top: 24px;
     background-color: $light-text;
     padding: 24px 48px;
     border-radius: 6px;
+
+    &__column {
+      &:nth-child(1) {
+        width: 10%;
+      }
+      &:nth-child(2) {
+        width: 20%;
+      }
+      &:nth-child(3) {
+        width: 20%;
+      }
+    }
+
+    &__notes {
+      font-weight: 300;
+      font-size: $font-size-sm;
+      color: $primary-text;
+    }
 
     &--expense {
       color: $info-text;

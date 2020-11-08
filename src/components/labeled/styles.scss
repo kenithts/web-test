@@ -4,14 +4,18 @@
   &__wrapper {
     @extend .flex-column;
     width: fit-content;
-    font-size: $font-size-lg;
-    font-weight: 700;
 
-    & > span {
+    &__labeled {
       font-size: $font-size-xs;
       color: $secondary-text;
       text-transform: uppercase;
       font-weight: 700;
     }
+  }
+
+  &__children {
+    @extend .flex-column;
+    font-size: $font-size-lg;
+    font-weight: 700;
   }
 }

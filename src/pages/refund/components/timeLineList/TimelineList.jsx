@@ -45,14 +45,40 @@ const TimelineList = () => {
       {
         items.content.map((item) => (
           <div className="timeline-list__item">
-            <LabeledIcon
-              classNameIcon={ITEM_TYPES[item.cardType].classNameIcon}
-              icon={item.expenseTypeIcon || ITEM_TYPES[item.cardType].icon}
-              label={unixToDate(item.cardDate)}
-            />
-            <Labeled label={t('action')}>
-              {item.cardDate}
-            </Labeled>
+            <div className="timeline-list__item__column">
+              <LabeledIcon
+                classNameIcon={ITEM_TYPES[item.cardType].classNameIcon}
+                icon={item.expenseTypeIcon || ITEM_TYPES[item.cardType].icon}
+                label={unixToDate(item.cardDate)}
+              />
+            </div>
+
+            <div className="timeline-list__item__column">
+              <Labeled className="timeline-list__item__column" label={t('action')}>
+                {item.expenseTypeCode ? t(item.expenseTypeCode) : 'aats'}
+                <span className="timeline-list__item__notes">
+                  {item.notes}
+                </span>
+              </Labeled>
+            </div>
+
+            <div className="timeline-list__item__column">
+              <Labeled className="timeline-list__item__column" label={t('value')}>
+                {`${item.currencyCode} ${item.amountSpent}`}
+                <span className="timeline-list__item__notes">
+                  {`${t('noteValue')}: ${item.currencyCode} ${item.amountTotal}`}
+                </span>
+              </Labeled>
+            </div>
+
+            <div className="timeline-list__item__column">
+              <Labeled className="timeline-list__item__column" label={t('value')}>
+                {`${item.currencyCode} ${item.amountSpent}`}
+                <span className="timeline-list__item__notes">
+                  {`${t('noteValue')}: ${item.currencyCode} ${item.amountTotal}`}
+                </span>
+              </Labeled>
+            </div>
           </div>
         ))
       }

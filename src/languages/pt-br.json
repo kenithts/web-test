@@ -19,6 +19,10 @@
     "costCenter": "Centro de custo"
   },
   "timeline": {
-    "action": "Ação"
+    "action": "Ação",
+    "value": "Valor",
+    "hotel-fee": "Hotel",
+    "food": "Refeição",
+    "noteValue": "Valor da nota"
   }
 }
