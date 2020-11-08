@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import LabeledIcon from 'components/labeledIcon';
 import { unixToDate } from 'utils/date';
 
-const Icon = ({ item, types }) => (
+const Icon = ({ item, type }) => (
   <LabeledIcon
-    classNameIcon={types[item.cardType].classNameIcon}
-    icon={item.expenseTypeIcon || types[item.cardType].icon}
+    classNameIcon={type.classNameIcon}
+    icon={item.expenseTypeIcon || type.icon}
     label={unixToDate(item.cardDate)}
   />
 );
@@ -18,10 +18,10 @@ Icon.propTypes = {
     cardType: PropTypes.string,
     expenseTypeIcon: PropTypes.string,
   }).isRequired,
-  types: PropTypes.arrayOf(PropTypes.shape({
+  type: PropTypes.shape({
     classNameIcon: PropTypes.string,
     icon: PropTypes.string,
-  })).isRequired,
+  }).isRequired,
 };
 
 export default Icon;

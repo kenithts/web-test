@@ -33,7 +33,7 @@ const TimelineList = () => {
                   style={{ width: index === 0 ? '10%' : `${90 / (columns.length - 1)}%` }}
                   className="timeline-list__item__column"
                 >
-                  <Column item={item} t={t} types={ITEM_TYPES} />
+                  <Column item={item} t={t} type={ITEM_TYPES[item.cardType]} />
                 </div>
               ))
             }

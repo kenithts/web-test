@@ -28,6 +28,10 @@
     "hotel-fee": "Hotel",
     "food": "Refeição",
     "noteValue": "Valor da nota",
-    "seeReceipt": "Ver nota fiscal"
+    "seeReceipt": "Ver nota fiscal",
+    "evaluation": "Aprovação do adiantamento",
+    "submitted": "Despesas enviadas para aprovação por {{name}}",
+    "created": "Despesas criadas por {{name}}",
+    "approvalDate": "Data da aprovação"
   }
 }
