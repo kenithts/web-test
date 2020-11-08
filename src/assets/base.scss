@@ -1,20 +1,17 @@
 @import './variables.scss';
+@import './colors.scss';
 
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $primary-text;
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .flex {
@@ -30,6 +27,12 @@ code {
 .flex-column {
   @extend .flex;
   flex-direction: column;
+}
+
+.flex-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {

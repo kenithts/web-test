@@ -8,7 +8,7 @@ const request = (url, options, errorHandling = true) => (
     .catch((e) => {
       console.error(e);
       if (errorHandling) {
-        NotificationManager.error(i18n.t('general.defaultError'));
+        NotificationManager.error(i18n.t('error'));
       }
     })
 );

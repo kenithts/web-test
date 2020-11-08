@@ -1,0 +1,19 @@
+@import 'assets/main.scss';
+
+.labeled-icon {
+  &__wrapper {
+    @extend .flex-column;
+    width: fit-content;
+    align-items: center;
+    font-size: $font-size-sm;
+  }
+
+  &__icon {
+    @extend .flex-center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}

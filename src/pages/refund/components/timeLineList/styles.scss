@@ -1,0 +1,15 @@
+@import 'assets/main.scss';
+
+.timeline-list {
+  &__item {
+    margin-top: 24px;
+    background-color: $light-text;
+    padding: 24px 48px;
+    border-radius: 6px;
+
+    &--expense {
+      color: $info-text;
+      background-color: $info-bg;
+    }
+  }
+}
