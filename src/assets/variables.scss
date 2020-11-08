@@ -1,2 +1,16 @@
 $header-height: 48px;
 $sidebar-width: 220px;
+
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 540px,
+  sm: 720px,
+  md: 960px,
+  lg: 1140px,
+);
+
+

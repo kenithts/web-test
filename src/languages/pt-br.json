@@ -6,5 +6,15 @@
   },
   "general": {
     "defaultError": "Ocorreu um erro!"
+  },
+  "refund": {
+    "refund": "Reembolso",
+    "justification": "Justificativa",
+    "FRATERNIZATION": "Confraternização",
+    "purpose": "Finalidade",
+    "quantity": "Quantidade",
+    "people": "{{amount}} pessoas",
+    "project": "Projeto",
+    "costCenter": "Centro de custo"
   }
 }

@@ -1,0 +1,110 @@
+@import 'assets/main.scss';
+
+.refund-banner {
+  &__wrapper {
+    @extend .flex-column;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  &__edit {
+    @extend .hover;
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    @extend .flex-column;
+
+    font-size: $font-size-sm;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    &__column {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $light-text;
+
+      @include media-breakpoint-up(md) {
+        border-right: 1px solid $light-text;
+        width: 33%;
+        margin: 0;
+        padding: 0;
+        border-bottom: unset;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+
+    td {
+      &:last-child {
+        font-weight: 700;
+      }
+    }
+    th {
+      height: 10px;
+    }
+  }
+
+  &__cost-center {
+    &__wrapper {
+      @extend .flex-column;
+      align-items: center;
+      height: 100%;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 13px;
+      }
+
+      span {
+        margin-bottom: 10px;
+      }
+
+      b {
+        font-size: 16px;
+      }
+    }
+
+    &__content {
+      @extend .flex-column;
+      width: fit-content;
+    }
+  }
+
+  &__budget {
+    &__main-wrapper {
+      @extend .flex-column;
+      align-items: center;
+
+      svg {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      b {
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

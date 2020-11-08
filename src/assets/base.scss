@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
@@ -5,8 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p, b, span {
+* {
   margin: 0;
+  box-sizing: border-box;
 }
 
 code {
@@ -28,3 +31,15 @@ code {
   @extend .flex;
   flex-direction: column;
 }
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
