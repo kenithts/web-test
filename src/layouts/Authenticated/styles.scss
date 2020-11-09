@@ -7,6 +7,7 @@
     &__inner {
       @extend .flex-row;
       background-color: $background;
+      min-height: calc(100vh - #{$header-height});
     }
 
     &__content {
