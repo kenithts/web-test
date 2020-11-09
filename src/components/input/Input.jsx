@@ -8,7 +8,7 @@ const Input = ({
 }) => (
   <div className="input__wrapper">
     <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
-    <input required={required} name={name} {...props} />
+    <input {...props} required={required} name={name} />
     {error && <span>{error}</span>}
   </div>
 );

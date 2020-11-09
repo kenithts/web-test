@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import FileUploader from 'components/fileUploader';
@@ -10,6 +10,28 @@ import { EXPENSE_TYPES, CURRENCY_TYPES } from './constants';
 
 const AddExpense = () => {
   const { t } = useTranslation('addExpense');
+  const [form, setForm] = useState({
+    expenseTypeCode: '',
+    currencyCode: '',
+    amountSpent: '',
+    amountTotal: '',
+    notes: '',
+    resourceUrl: '',
+    cardDate: '',
+  });
+  const [errors, setErrors] = useState({});
+
+  const setField = (e) => {
+    console.log(e.target.name, e.target.value);
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors(({ [e.target.name]: _, ...prev }) => ({ ...prev }));
+  };
+
+  const setError = (error, name) => {
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  console.log(form, setForm, setField, errors);
 
   return (
     <div className="add-expense__wrapper">
@@ -21,7 +43,15 @@ const AddExpense = () => {
           <p>
             {t('fileOptions')}
           </p>
-          <FileUploader />
+          <FileUploader
+            accept=".jpg,.png"
+            onChange={setField}
+            onError={setError}
+            name="resourceUrl"
+            maxSize={1000000}
+            value={form.resourceUrl}
+            error={errors.resourceUrl}
+          />
           <span>
             {t('format')}
           </span>
@@ -29,7 +59,7 @@ const AddExpense = () => {
         <div className="add-expense__form__fields">
           <div className="add-expense__form__fields__half">
             <Select
-              name="type-select"
+              name="expenseTypeCode"
               placeholder={t('select')}
               label={t('type')}
               options={EXPENSE_TYPES.map((option) => ({
@@ -38,30 +68,29 @@ const AddExpense = () => {
               }))}
             />
             <Select
-              name="type-select"
+              name="currencyCode"
               placeholder={t('select')}
               label={t('currency')}
               options={CURRENCY_TYPES}
             />
           </div>
-          <Input name="expense-title" placeholder={t('expensePlaceholder')} label={t('expenseTitle')} />
+          <Input name="notes" placeholder={t('expensePlaceholder')} label={t('expenseTitle')} />
           <Input
             type="date"
-            name="expense-title"
-            placeholder={t('expensePlaceholder')}
-            label={t('expenseTitle')}
+            name="cardDate"
+            label={t('comprovantDate')}
           />
           <div className="add-expense__form__fields__half">
             <Input
               step="0.01"
               type="number"
-              name="note-value"
+              name="amountSpent"
               placeholder={t('noteValuePlaceholder')}
               label={t('noteValue')}
             />
             <Input
               step="0.01"
-              name="considered-value"
+              name="amountTotal"
               type="number"
               placeholder={t('consideredValuePlaceholder')}
               label={t('consideredValue')}

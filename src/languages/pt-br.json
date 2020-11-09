@@ -8,12 +8,14 @@
     "defaultError": "Ocorreu um erro!",
     "selectFile": "Selecione um arquivo do seu computador"
   },
-  "error": "kenith",
+  "errors": {
+    "ERROR_EXCEED_SIZE": "Tamanho limite de arquivo excedido"
+  },
   "addExpense": {
     "newExpense": "Nova despesa",
     "fileOptions": "Recibo, cupom ou nota fiscal*",
     "format": "A imagem deve estar no formato JPG ou PNG.",
-    "expenseTitle": "Título da despesa",
+    "expenseTitle": "Descrição da despesa",
     "expensePlaceholder": "Almoço com o chefe",
     "type": "Tipo",
     "select": "Selecione",

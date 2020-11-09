@@ -2,14 +2,25 @@
 
 .file-uploader {
   &__wrapper {
-    @extend .flex-row;
+    @extend .flex-column;
     border: 1px dashed $secondary-text;
     padding: 44px 23px;
     min-height: 200px;
-    align-items: flex-end;
+    justify-content: flex-end;
+
+    &--filled {
+      justify-content: flex-start;
+    }
 
     input[type='file'] {
       display: none
+    }
+
+    span {
+      color: $error-text;
+      font-size: $font-size-xs;
+      text-align: center;
+      margin-top: 6px;
     }
   }
 
