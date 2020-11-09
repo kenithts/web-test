@@ -1,4 +1,4 @@
-import { getSidebar } from 'pages/refund/service';
+import Service from 'pages/refund/service';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ const Sidebar = ({ status }) => {
   const [sidebar, setSidebar] = useState(null);
 
   useEffect(async () => {
-    setSidebar(await getSidebar());
+    setSidebar(await Service.getSidebar());
   }, []);
 
   if (!status || !sidebar) {

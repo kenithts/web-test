@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import Loader from 'components/loader';
-import { getHeader } from '../../service';
+import Service from '../../service';
 
 import GeneralDescription from './GeneralDescription';
 import CostCenter from './CostCenter';
@@ -19,7 +19,7 @@ const RefundBanner = ({ setStatus }) => {
   const { t } = useTranslation('refund');
 
   useEffect(async () => {
-    const res = await getHeader();
+    const res = await Service.getHeader();
     setHeaderInfo(res);
     setStatus(res.status);
   }, []);

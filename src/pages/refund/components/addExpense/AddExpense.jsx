@@ -8,7 +8,7 @@ import Select from 'components/select';
 
 import './styles.scss';
 import Button from 'components/button';
-import { createExpense } from 'pages/refund/service';
+import Service from 'pages/refund/service';
 import { EXPENSE_TYPES, CURRENCY_TYPES } from './constants';
 
 const AddExpense = ({ onToggle }) => {
@@ -50,7 +50,7 @@ const AddExpense = ({ onToggle }) => {
       return;
     }
     setSending(true);
-    await createExpense(form);
+    await Service.createExpense(form);
     onToggle();
     setSending(false);
   };

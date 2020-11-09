@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -20,6 +21,7 @@ module.exports = {
   rules: {
     'react/jsx-props-no-spreading': 'off',
     'react/button-has-type': 'off',
+    'class-methods-use-this': 'off',
   },
   settings: {
     'import/resolver': {

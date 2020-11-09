@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Loader from 'components/loader';
-import { getTimeline } from '../../service';
+import Service from 'pages/refund/service';
 import ITEM_TYPES from './constants';
 
 import './styles.scss';
@@ -12,24 +12,24 @@ const TimelineList = () => {
   const { t } = useTranslation('timeline');
 
   useEffect(async () => {
-    setItems(await getTimeline());
+    setItems(await Service.getTimeline());
   }, []);
 
   if (!items) {
     return (
-      <div className="timeline-list__loading">
+      <div data-testid="timeline-loader" className="timeline-list__loading">
         <Loader />
       </div>
     );
   }
 
   return (
-    <div className="timeline-list__wrapper">
+    <div data-testid="timeline-list" className="timeline-list__wrapper">
       {
         items.content.map((item) => {
           const { columns } = ITEM_TYPES[item.cardType];
           return (
-            <div className="timeline-list__item" key={item.id}>
+            <div data-testid="timeline-list-item" className="timeline-list__item" key={item.id}>
               {
               columns.map((Column, index) => (
                 <div
