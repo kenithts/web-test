@@ -12,6 +12,13 @@
     &__content {
       padding: 12px 27px;
       width: 100%;
+      display: flex;
+      justify-content: center;
+
+      > div {
+        width: 100%;
+        max-width: $layout-max-width;
+      }
     }
   }
 }

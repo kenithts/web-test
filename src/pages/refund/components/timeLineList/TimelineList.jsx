@@ -33,8 +33,9 @@ const TimelineList = () => {
               {
               columns.map((Column, index) => (
                 <div
-                  style={{ width: index === 0 ? '10%' : `${90 / (columns.length - 1)}%` }}
+                  style={{ width: index === 0 ? '15%' : `${85 / (columns.length - 1)}%` }}
                   className="timeline-list__item__column"
+                  key={Column.name}
                 >
                   <Column item={item} t={t} type={ITEM_TYPES[item.cardType]} />
                 </div>

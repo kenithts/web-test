@@ -7,7 +7,11 @@ import './styles.scss';
 const CustomLoader = ({ innerClassName }) => <Loader innerClassName={innerClassName} type="ball-pulse-sync" active />;
 
 CustomLoader.propTypes = {
-  innerClassName: PropTypes.number.isRequired,
+  innerClassName: PropTypes.string,
+};
+
+CustomLoader.defaultProps = {
+  innerClassName: '',
 };
 
 export default CustomLoader;

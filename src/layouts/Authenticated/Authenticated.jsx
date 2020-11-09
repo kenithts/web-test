@@ -12,7 +12,9 @@ const Authenticated = ({ children }) => (
     <div className="authenticated__wrapper__inner">
       <Sidebar />
       <div className="authenticated__wrapper__content">
-        {children}
+        <div>
+          {children}
+        </div>
       </div>
     </div>
   </div>

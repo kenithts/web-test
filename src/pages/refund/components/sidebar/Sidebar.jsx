@@ -28,7 +28,7 @@ const Sidebar = ({ status }) => {
       <Status status={status} />
       <div className="right-sidebar__items">
         {
-          sidebar.content.map((item) => <Balance item={item} key={item.id} />)
+          sidebar.content.map((item) => <Balance item={item} key={`${item.accountabilityId} ${item.currency?.id}`} />)
         }
       </div>
     </div>
@@ -36,7 +36,11 @@ const Sidebar = ({ status }) => {
 };
 
 Sidebar.propTypes = {
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string,
+};
+
+Sidebar.defaultProps = {
+  status: '',
 };
 
 export default Sidebar;

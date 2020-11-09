@@ -49,13 +49,9 @@ const AddExpense = ({ onToggle }) => {
     if (hasError) {
       return;
     }
-    try {
-      setSending(true);
-      await createExpense(form);
-      onToggle();
-    } catch (err) {
-      console.error(err);
-    }
+    setSending(true);
+    await createExpense(form);
+    onToggle();
     setSending(false);
   };
 

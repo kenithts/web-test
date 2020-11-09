@@ -14,7 +14,7 @@ const Icon = ({ item, type }) => (
 
 Icon.propTypes = {
   item: PropTypes.shape({
-    cardDate: PropTypes.string,
+    cardDate: PropTypes.number,
     cardType: PropTypes.string,
     expenseTypeIcon: PropTypes.string,
   }).isRequired,

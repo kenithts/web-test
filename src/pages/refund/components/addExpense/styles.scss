@@ -20,13 +20,22 @@
   }
 
   &__form {
+    @extend .flex-column;
     margin-top: 10px;
-    @extend .flex-row;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
 
     &__file {
       background-color: $light-text;
-      padding: 52px 92px;
-      width: 50%;
+      width: 100%;
+      padding: 20px;
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+        padding: 52px 92px;
+      }
 
       & > p {
         margin-bottom: 10px;
@@ -41,9 +50,14 @@
 
     &__fields {
       @extend .flex-column;
+      width: 100%;
+      margin-top: 30px;
 
-      width: 50%;
-      margin-left: 46px;
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+        margin-left: 46px;
+        margin-top: 0px;
+      }
 
       &__half {
         @extend .flex-row;

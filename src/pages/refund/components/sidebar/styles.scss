@@ -3,6 +3,11 @@
 .right-sidebar {
   &__wrapper {
     @extend .flex-column;
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+    }
 
     background-color: $light-text;
     min-width: 393px;
