@@ -6,9 +6,9 @@ import classnames from 'classnames';
 import './styles.scss';
 
 const Button = ({
-  className, icon, label, ...props
+  className, type, icon, label, variant, ...props
 }) => (
-  <button {...props} type="button" className={classnames(className, 'button__wrapper')}>
+  <button {...props} type={type} className={classnames(className, variant, 'button__wrapper')}>
     {icon && <Icon name={icon} />}
     {label}
   </button>
@@ -18,11 +18,15 @@ Button.propTypes = {
   icon: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string.isRequired,
+  variant: PropTypes.string,
+  type: PropTypes.string,
 };
 
 Button.defaultProps = {
   icon: '',
   className: '',
+  variant: '',
+  type: 'button',
 };
 
 export default Button;

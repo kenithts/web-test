@@ -13,9 +13,11 @@ import './styles.scss';
 
 const Refund = () => {
   const [status, setStatus] = useState(null);
-  const [isCreateOpen, setIsCreateOpen] = useState(true);
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
 
   const { t } = useTranslation('refund');
+
+  const toggle = () => setIsCreateOpen((prev) => !prev);
 
   return (
     <div className="refund__wrapper">
@@ -24,14 +26,12 @@ const Refund = () => {
         <div className="refund__content">
           <RefundBanner setStatus={setStatus} />
           <Button
-            onClick={() => setIsCreateOpen((prev) => !prev)}
+            onClick={toggle}
             className="refund__button"
             icon="receipt"
             label={t('addExpense')}
           />
-          {
-            isCreateOpen && <AddExpense />
-          }
+          {isCreateOpen && <AddExpense onToggle={toggle} />}
           <TimelineList />
         </div>
         <Sidebar status={status} />

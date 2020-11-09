@@ -10,6 +10,7 @@ const request = (url, options, errorHandling = true) => (
       if (errorHandling) {
         NotificationManager.error(i18n.t('error'));
       }
+      throw e;
     })
 );
 

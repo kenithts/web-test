@@ -28,7 +28,9 @@
     "hotel": "Hotel",
     "transport": "Transporte",
     "food": "Refeição",
-    "currency": "Moeda"
+    "currency": "Moeda",
+    "cancel": "Cancelar",
+    "save": "Salvar"
   },
   "refund": {
     "refund": "Reembolso",

@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 import FileUploader from 'components/fileUploader';
 import Input from 'components/input';
 import Select from 'components/select';
 
 import './styles.scss';
+import Button from 'components/Button';
+import { createExpense } from 'pages/refund/service';
 import { EXPENSE_TYPES, CURRENCY_TYPES } from './constants';
 
-const AddExpense = () => {
+const AddExpense = ({ onToggle }) => {
   const { t } = useTranslation('addExpense');
   const [form, setForm] = useState({
     expenseTypeCode: '',
@@ -31,12 +34,11 @@ const AddExpense = () => {
     setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     e.stopPropagation();
 
     const hasError = Object.keys(form).reduce((acc, field) => {
-      console.log(acc, form[field], field);
       if (!form[field]) {
         setError('REQUIRED_FIELDS', field);
         return acc || true;
@@ -47,8 +49,12 @@ const AddExpense = () => {
     if (hasError) {
       return;
     }
-
-    console.log('chamado');
+    try {
+      await createExpense(form);
+      onToggle();
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -142,13 +148,18 @@ const AddExpense = () => {
               label={t('consideredValue')}
             />
           </div>
-          <button type="submit">
-            enviar
-          </button>
+          <div className="add-expense__buttons">
+            <Button label={t('cancel')} onClick={onToggle} />
+            <Button variant="primary" type="submit" label={t('save')} />
+          </div>
         </div>
       </form>
     </div>
   );
+};
+
+AddExpense.propTypes = {
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default AddExpense;
