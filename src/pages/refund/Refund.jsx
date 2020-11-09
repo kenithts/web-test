@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 import Breadcrumb from 'components/breadcrumb';
-import Button from 'components/button';
 import { useTranslation } from 'react-i18next';
+import Button from '../../components/button';
 import RefundBanner from './components/refundBanner';
 import TimelineList from './components/timeLineList';
 import Sidebar from './components/sidebar';
