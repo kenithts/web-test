@@ -5,12 +5,14 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
+import Loader from 'components/loader';
 import { getHeader } from '../../service';
 
-import './styles.scss';
 import GeneralDescription from './GeneralDescription';
 import CostCenter from './CostCenter';
 import Budget from './Budget';
+
+import './styles.scss';
 
 const RefundBanner = ({ setStatus }) => {
   const [headerInfo, setHeaderInfo] = useState(null);
@@ -23,7 +25,11 @@ const RefundBanner = ({ setStatus }) => {
   }, []);
 
   if (!headerInfo) {
-    return null;
+    return (
+      <Banner className="refund-banner__loading">
+        <Loader />
+      </Banner>
+    );
   }
 
   return (

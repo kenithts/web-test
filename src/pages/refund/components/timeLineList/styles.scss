@@ -1,6 +1,10 @@
 @import 'assets/main.scss';
 
 .timeline-list {
+  &__loading {
+    @extend .flex-center;
+    margin-top: 50px;
+  }
   &__item {
     @extend .flex-column;
     min-width: 100%;

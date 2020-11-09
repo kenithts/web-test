@@ -10,7 +10,7 @@ import './styles.scss';
 const Button = ({
   className, type, icon, label, variant, busy, ...props
 }) => (
-  <button {...props} type={type} className={classnames(className, variant, 'button__wrapper')}>
+  <button {...props} disabled={busy} type={type} className={classnames(className, variant, 'button__wrapper')}>
     {icon && <Icon name={icon} />}
     {busy ? <Loader innerClassName="button__loader" /> : label }
   </button>

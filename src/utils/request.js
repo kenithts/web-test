@@ -1,17 +1,19 @@
 /* eslint-disable no-console */
-import { NotificationManager } from 'react-notifications';
-import i18n from 'i18n';
 
-const request = (url, options, errorHandling = true) => (
-  fetch(url, options)
-    .then((response) => response.json())
-    .catch((e) => {
-      console.error(e);
-      if (errorHandling) {
-        NotificationManager.error(i18n.t('error'));
-      }
-      throw e;
-    })
+const request = (url, options) => (
+  new Promise((resolve) => {
+    const pool = setInterval(() => {
+      fetch(url, options)
+        .then((response) => {
+          clearInterval(pool);
+          resolve(response.json());
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    }, 2000);
+  })
+
 );
 
 export default request;

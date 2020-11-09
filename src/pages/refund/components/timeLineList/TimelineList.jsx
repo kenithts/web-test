@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Loader from 'components/loader';
 import { getTimeline } from '../../service';
+import ITEM_TYPES from './constants';
 
 import './styles.scss';
-import ITEM_TYPES from './constants';
 
 const TimelineList = () => {
   const [items, setItems] = useState(null);
   const { t } = useTranslation('timeline');
 
-  useEffect(() => {
-    setItems(getTimeline());
+  useEffect(async () => {
+    setItems(await getTimeline());
   }, []);
 
   if (!items) {
-    return null;
+    return (
+      <div className="timeline-list__loading">
+        <Loader />
+      </div>
+    );
   }
 
   return (

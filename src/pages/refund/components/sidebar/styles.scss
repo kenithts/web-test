@@ -8,8 +8,13 @@
     min-width: 393px;
     max-width: 393px;
     padding: 40px 22px;
-    min-height: calc(100vh - $header-height);
+    min-height: calc(100vh - #{$header_height});
     margin-left: 56px;
+  }
+
+  &__loading {
+    @extend .right-sidebar__wrapper;
+    @extend .flex-center;
   }
 
   &__items {

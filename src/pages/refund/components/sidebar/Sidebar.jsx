@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Status from 'components/status';
+import Loader from 'components/loader';
 import Balance from './components/balance';
 
 import './styles.scss';
@@ -10,14 +11,16 @@ import './styles.scss';
 const Sidebar = ({ status }) => {
   const [sidebar, setSidebar] = useState(null);
 
-  useEffect(() => {
-    setSidebar(getSidebar());
+  useEffect(async () => {
+    setSidebar(await getSidebar());
   }, []);
 
-  console.log(sidebar);
-
   if (!status || !sidebar) {
-    return null;
+    return (
+      <div className="right-sidebar__loading">
+        <Loader />
+      </div>
+    );
   }
 
   return (
