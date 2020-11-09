@@ -14,11 +14,10 @@ const Select = ({
     <div className="select__wrapper">
       <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
       <div className="select__select">
-        <select onChange={onChange} name={name} {...props}>
-          <option value="" disabled selected={!value}>{placeholder}</option>
+        <select value={value} onChange={onChange} name={name} {...props}>
+          <option value="" disabled>{placeholder}</option>
           {options.map((option) => (
             <option
-              selected={value === option.value}
               key={option.value}
               value={option.value}
             >

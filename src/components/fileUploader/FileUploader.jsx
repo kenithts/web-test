@@ -52,12 +52,14 @@ FileUploader.propTypes = {
   onError: PropTypes.func.isRequired,
   maxSize: PropTypes.number.isRequired,
   error: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.shape({
+    name: PropTypes.string,
+  }),
 };
 
 FileUploader.defaultProps = {
   error: '',
-  value: '',
+  value: null,
 };
 
 export default FileUploader;

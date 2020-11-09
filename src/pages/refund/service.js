@@ -1,6 +1,7 @@
 import request from 'utils/request';
 import config from 'config/config.json';
 import NotificationManager from 'react-notifications/lib/NotificationManager';
+import { dateToUnix } from 'utils/date';
 
 class Service {
   getHeader() {
@@ -18,7 +19,10 @@ class Service {
   async createExpense(body) {
     const res = await request(`${config.API_URL}/expense/add`, {
       method: 'POST',
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        ...body,
+        cardDate: dateToUnix(body.cardDate),
+      }),
       redirect: 'follow',
       headers: new Headers({
         'Content-Type': 'application/json',

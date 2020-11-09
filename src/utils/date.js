@@ -8,4 +8,9 @@ export const unixToDate = (unixDate) => {
   return `${addZero(date.getDate())}/${addZero(date.getMonth() + 1)}/${date.getFullYear()}`;
 };
 
-export const dateToUnix = () => '';
+export const dateToUnix = (date) => {
+  if (!date) {
+    return null;
+  }
+  return new Date(date).getTime();
+};
