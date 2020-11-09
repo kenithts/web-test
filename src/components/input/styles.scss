@@ -1,0 +1,26 @@
+@import 'assets/main.scss';
+
+.input {
+  &__wrapper {
+    @extend .flex-column;
+
+    label {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    span {
+      color: $error-text;
+      font-size: $font-size-xs;
+      margin-top: 6px;
+    }
+
+    input {
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid $secondary-text;
+      width: 100%;
+    }
+  }
+}
