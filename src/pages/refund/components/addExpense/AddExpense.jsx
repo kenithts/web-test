@@ -19,7 +19,7 @@ const AddExpense = ({ onToggle }) => {
     amountSpent: '',
     amountTotal: '',
     notes: '',
-    resourceUrl: '',
+    resourceUrl: null,
     cardDate: '',
   });
   const [errors, setErrors] = useState({});
@@ -129,6 +129,7 @@ const AddExpense = ({ onToggle }) => {
               value={form.amountSpent}
               error={errors.amountSpent}
               step="0.01"
+              min={0}
               type="number"
               name="amountSpent"
               placeholder={t('noteValuePlaceholder')}
@@ -140,6 +141,7 @@ const AddExpense = ({ onToggle }) => {
               value={form.amountTotal}
               error={errors.amountTotal}
               step="0.01"
+              min={0}
               name="amountTotal"
               type="number"
               placeholder={t('consideredValuePlaceholder')}
