@@ -7,7 +7,7 @@ import Input from 'components/input';
 import Select from 'components/select';
 
 import './styles.scss';
-import Button from 'components/Button';
+import Button from 'components/button';
 import { createExpense } from 'pages/refund/service';
 import { EXPENSE_TYPES, CURRENCY_TYPES } from './constants';
 
@@ -23,9 +23,9 @@ const AddExpense = ({ onToggle }) => {
     cardDate: '',
   });
   const [errors, setErrors] = useState({});
+  const [sending, setSending] = useState(false);
 
   const setField = (e) => {
-    console.log(e.target.name, e.target.value);
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setErrors(({ [e.target.name]: _, ...prev }) => ({ ...prev }));
   };
@@ -50,11 +50,13 @@ const AddExpense = ({ onToggle }) => {
       return;
     }
     try {
+      setSending(true);
       await createExpense(form);
       onToggle();
     } catch (err) {
       console.error(err);
     }
+    setSending(false);
   };
 
   return (
@@ -150,7 +152,7 @@ const AddExpense = ({ onToggle }) => {
           </div>
           <div className="add-expense__buttons">
             <Button label={t('cancel')} onClick={onToggle} />
-            <Button variant="primary" type="submit" label={t('save')} />
+            <Button busy={sending} variant="primary" type="submit" label={t('save')} />
           </div>
         </div>
       </form>

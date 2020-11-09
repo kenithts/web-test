@@ -1,0 +1,11 @@
+@import 'assets/main.scss';
+$primary-color: $highlight-text;
+@import 'loaders.css/src/animations/ball-pulse-sync.scss';
+
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}

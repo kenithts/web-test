@@ -16,10 +16,24 @@
       background-color: $highlight-text;
       color: $light-text;
       border-color: $highlight-text;
+
+      .button__loader {
+        &.ball-pulse-sync {
+          > div {
+            background-color: white !important;
+          }
+        }
+      }
     }
 
     svg {
       margin-right: 5px;
     }
+  }
+
+  &__loader {
+    height: 10px;
+    font-size: 10px;
+    transform: scale(0.4);
   }
 }
