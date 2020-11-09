@@ -1,0 +1,20 @@
+@import 'assets/main.scss';
+
+.file-uploader {
+  &__wrapper {
+    @extend .flex-row;
+    border: 1px dashed $secondary-text;
+    padding: 44px 23px;
+    min-height: 200px;
+    align-items: flex-end;
+
+    input[type='file'] {
+      display: none
+    }
+  }
+
+  &__button {
+    border-color: $secondary-text;
+    padding: 12px 24px;
+  }
+}
