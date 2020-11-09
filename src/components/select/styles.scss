@@ -1,0 +1,44 @@
+@import 'assets/main.scss';
+
+.select {
+  &__wrapper {
+    @extend .flex-column;
+    margin-bottom: 20px;
+
+    label {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    span {
+      color: $error-text;
+      font-size: $font-size-xs;
+      margin-top: 6px;
+    }
+
+    select {
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid $secondary-text;
+      width: 100%;
+      -webkit-appearance: none;
+
+      &:invalid {
+        color: $placeholder;
+      }
+    }
+  }
+
+  &__select {
+    position: relative;
+  }
+
+  &__icon {
+    pointer-events: none;
+    position: absolute;
+    top: 12px;
+    font-size: $font-size-xs;
+    right: 20px;
+  }
+}
