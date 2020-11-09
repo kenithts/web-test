@@ -3,6 +3,7 @@
 .input {
   &__wrapper {
     @extend .flex-column;
+    margin-bottom: 20px;
 
     label {
       font-weight: 700;
@@ -21,6 +22,10 @@
       border-radius: 6px;
       border: 1px solid $secondary-text;
       width: 100%;
+
+      &[type=date]:invalid::-webkit-datetime-edit {
+        color: $placeholder;
+      }
     }
   }
 }

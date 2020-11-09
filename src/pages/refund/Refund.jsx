@@ -7,11 +7,13 @@ import { useTranslation } from 'react-i18next';
 import RefundBanner from './components/refundBanner';
 import TimelineList from './components/timeLineList';
 import Sidebar from './components/sidebar';
+import AddExpense from './components/addExpense';
 
 import './styles.scss';
 
 const Refund = () => {
   const [status, setStatus] = useState(null);
+  const [isCreateOpen, setIsCreateOpen] = useState(true);
 
   const { t } = useTranslation('refund');
 
@@ -21,7 +23,15 @@ const Refund = () => {
       <div className="refund__inner">
         <div className="refund__content">
           <RefundBanner setStatus={setStatus} />
-          <Button className="refund__button" icon="receipt" label={t('addExpense')} />
+          <Button
+            onClick={() => setIsCreateOpen((prev) => !prev)}
+            className="refund__button"
+            icon="receipt"
+            label={t('addExpense')}
+          />
+          {
+            isCreateOpen && <AddExpense />
+          }
           <TimelineList />
         </div>
         <Sidebar status={status} />

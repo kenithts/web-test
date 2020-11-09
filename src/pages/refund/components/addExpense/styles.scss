@@ -1,0 +1,46 @@
+@import 'assets/main.scss';
+
+.add-expense {
+  &__wrapper {
+    background-color: $secondary-background;
+    padding: 24px 48px;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+
+  &__form {
+    margin-top: 10px;
+    @extend .flex-row;
+
+    &__file {
+      background-color: $light-text;
+      padding: 52px 92px;
+
+      & > p {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      & > span {
+        font-size: $font-size-xs;
+        margin-top: 10px;
+      }
+    }
+
+    &__fields {
+      @extend .flex-column;
+
+      width: 50%;
+      margin-left: 46px;
+
+      &__half {
+        @extend .flex-row;
+        div {
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

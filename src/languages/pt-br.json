@@ -5,9 +5,28 @@
     "current": "Atual"
   },
   "general": {
-    "defaultError": "Ocorreu um erro!"
+    "defaultError": "Ocorreu um erro!",
+    "selectFile": "Selecione um arquivo do seu computador"
   },
   "error": "kenith",
+  "addExpense": {
+    "newExpense": "Nova despesa",
+    "fileOptions": "Recibo, cupom ou nota fiscal*",
+    "format": "A imagem deve estar no formato JPG ou PNG.",
+    "expenseTitle": "Título da despesa",
+    "expensePlaceholder": "Almoço com o chefe",
+    "type": "Tipo",
+    "select": "Selecione",
+    "comprovantDate": "Data do comprovante",
+    "noteValue": "Valor da nota / cupom",
+    "consideredValue": "Valor a ser considerado",
+    "noteValuePlaceholder": "0,00",
+    "consideredValuePlaceholder": "0,00",
+    "hotel": "Hotel",
+    "transport": "Transporte",
+    "food": "Refeição",
+    "currency": "Moeda"
+  },
   "refund": {
     "refund": "Reembolso",
     "justification": "Justificativa",

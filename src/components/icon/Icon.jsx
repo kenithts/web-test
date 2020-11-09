@@ -10,6 +10,7 @@ import {
   faReceipt,
   faArrowDown,
   faArrowUp,
+  faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 
 const ICONS = {
@@ -21,15 +22,20 @@ const ICONS = {
   receipt: faReceipt,
   'arrow-up': faArrowUp,
   'arrow-down': faArrowDown,
-
+  'chevron-down': faChevronDown,
 };
 
-const Icon = ({ name }) => (
-  <FontAwesomeIcon icon={ICONS[name]} />
+const Icon = ({ name, className }) => (
+  <FontAwesomeIcon className={className} icon={ICONS[name]} />
 );
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  className: '',
 };
 
 export default Icon;
