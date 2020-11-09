@@ -7,7 +7,7 @@ import Input from 'components/input';
 import Select from 'components/select';
 
 import './styles.scss';
-import Button from 'components/button';
+import Button from 'components/Button';
 import Service from 'pages/refund/service';
 import { EXPENSE_TYPES, CURRENCY_TYPES } from './constants';
 
