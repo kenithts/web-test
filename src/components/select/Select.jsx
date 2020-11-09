@@ -3,24 +3,35 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 import Icon from 'components/icon';
+import { useTranslation } from 'react-i18next';
 
 const Select = ({
-  label, name, required, error, placeholder, options, ...props
-}) => (
-  <div className="select__wrapper">
-    <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
-    <div className="select__select">
-      <select required name={name} {...props}>
-        <option value="" disabled selected hidden>{placeholder}</option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>{option.label}</option>
-        ))}
-      </select>
-      <Icon name="chevron-down" className="select__icon" />
+  onError, onChange, value, label, name, required, error, placeholder, options, ...props
+}) => {
+  const { t } = useTranslation('errors');
+
+  return (
+    <div className="select__wrapper">
+      <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
+      <div className="select__select">
+        <select onChange={onChange} name={name} {...props}>
+          <option value="" disabled selected={!value}>{placeholder}</option>
+          {options.map((option) => (
+            <option
+              selected={value === option.value}
+              key={option.value}
+              value={option.value}
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <Icon name="chevron-down" className="select__icon" />
+      </div>
+      {error && <span>{t(error)}</span>}
     </div>
-    {error && <span>{error}</span>}
-  </div>
-);
+  );
+};
 
 Select.propTypes = {
   label: PropTypes.string.isRequired,
@@ -32,6 +43,9 @@ Select.propTypes = {
     value: PropTypes.string,
     label: PropTypes.string,
   })).isRequired,
+  onError: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 Select.defaultProps = {

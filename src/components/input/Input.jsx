@@ -2,16 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
+import { useTranslation } from 'react-i18next';
 
 const Input = ({
   label, name, required, error, ...props
-}) => (
-  <div className="input__wrapper">
-    <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
-    <input {...props} required={required} name={name} />
-    {error && <span>{error}</span>}
-  </div>
-);
+}) => {
+  const { t } = useTranslation('errors');
+
+  return (
+    <div className="input__wrapper">
+      <label htmlFor={name}>{`${label}${required ? '*' : ''}`}</label>
+      <input {...props} name={name} />
+      {error && <span>{t(error)}</span>}
+    </div>
+  );
+};
 
 Input.propTypes = {
   label: PropTypes.string.isRequired,

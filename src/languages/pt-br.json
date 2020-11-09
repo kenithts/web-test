@@ -9,7 +9,8 @@
     "selectFile": "Selecione um arquivo do seu computador"
   },
   "errors": {
-    "ERROR_EXCEED_SIZE": "Tamanho limite de arquivo excedido"
+    "ERROR_EXCEED_SIZE": "Tamanho limite de arquivo excedido",
+    "REQUIRED_FIELDS": "Este campo é obrigatório"
   },
   "addExpense": {
     "newExpense": "Nova despesa",
